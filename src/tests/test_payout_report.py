@@ -1,15 +1,16 @@
 from reports.payout import PayoutReport
 from models.department import Department
-from models.employee import Employee
+from models.record import Record
 
 def test_payout_report_structure():
     dept = Department("Support")
-    emp1 = Employee("001", "a@a.com", "Alice", dept, 15, 10)
-    emp2 = Employee("002", "b@b.com", "Bob", dept, 10, 5)
+    rec1 = Record("001", "a@a.com", "Alice", dept.name, 15, 10)
+    rec2 = Record("002", "b@b.com", "Bob", dept.name, 10, 5)
 
-    report = PayoutReport([emp1, emp2])
+    report = PayoutReport([rec1, rec2])
     result = report.generate()
 
     assert result["report_type"] == "payout"
     assert isinstance(result["departments"], list)
+    print(result["departments"][0])
     assert result["departments"][0]["department"] == "Support"

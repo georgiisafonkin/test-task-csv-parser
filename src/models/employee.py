@@ -14,3 +14,12 @@ class Employee:
     @property
     def payout(self) -> float:
         return self.hourly_rate * self.hours_worked
+    
+    def to_dict(self) -> dict:
+        return {
+            "id": self.employee_id,
+            "name": self.name,
+            "email": self.email,
+            "hours_worked": self.hours_worked,
+            "payout": round(self.payout, 2)
+        }

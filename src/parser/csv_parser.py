@@ -4,6 +4,7 @@ from models.record import Record
 FIELD_ALIASES : Dict[str, List[str]] = {
     "employee_id": ["id", "employee_id", "emp_id"],
     "name": ["name", "fullname", "full_name"],
+    "email": ["email", "e-mail"],
     "department": ["department", "dept", "division"],
     "hourly_rate": ["hourly_rate", "rate", "salary", "wage"],
     "hours_worked": ["hours_worked", "worked_hours", "hours"]
@@ -40,6 +41,7 @@ class CsvParser:
             record = Record(
                 employee_id=values[header_map["employee_id"]],
                 name=values[header_map["name"]],
+                email=values[header_map["email"]],
                 department=values[header_map["department"]],
                 hourly_rate=float(values[header_map["hourly_rate"]]),
                 hours_worked=float(values[header_map["hours_worked"]])

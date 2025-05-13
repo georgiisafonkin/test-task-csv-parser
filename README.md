@@ -61,8 +61,13 @@ src
 
 ## Пример работы
 
+
+### 🔧 Команда запуска:
 ```bash
 python main.py ../data3.csv ../data2.csv ../data1.csv --report payout
+```
+### 📄 Вывод (JSON):
+```bash
 {
     "report_type": "payout",
     "departments": [

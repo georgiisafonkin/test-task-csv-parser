@@ -19,6 +19,5 @@ class Department:
         return {
             "department": self.name,
             "total_payout": round(self.total_payout, 2),
-            "total_hours": round(self.total_hours, 2),
             "employees": [emp.to_dict() for emp in self.employees]
         }

@@ -1,7 +1,10 @@
-from models.department import Department
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from models.department import Department
 
 class Employee:
-    def __init__(self, employee_id: str, email: str, name: str, department: Department, hourly_rate: float, hours_worked: float) -> None:
+    def __init__(self, employee_id: str, email: str, name: str, department: "Department", hourly_rate: float, hours_worked: float) -> None:
         self.employee_id = employee_id
         self.email = email
         self.name = name

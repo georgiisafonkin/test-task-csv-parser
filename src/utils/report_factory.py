@@ -10,5 +10,5 @@ class ReportFactory:
     @staticmethod
     def get_report(report_type: str) -> Type[Report]:
         if report_type not in ReportFactory.report_map:
-            raise ValueError(f"Unknown report type: {report_type}")
+            raise ValueError(f"Неизвестный тип отчёта: {report_type}")
         return ReportFactory.report_map[report_type]

@@ -14,13 +14,13 @@ class csv_parser:
         self.filepath = filepath
 
     def _resolve_headers(self, headers: List[str]) -> Dict[str, int]:
-        header_map = {}
-        lowered_headers = [h.strip().lower() for h in headers]
+        header_map: Dict[str, int] = {}
+        lowered_headers: List[str] = [h.strip().lower() for h in headers]
 
         for internal_field, aliases in FIELD_ALIASES.items():
             for alias in aliases:
                 if alias.lower() in lowered_headers:
-                    idx = lowered_headers.index(alias.lower())
+                    idx: int = lowered_headers.index(alias.lower())
                     header_map[internal_field] = idx
                     break
             else:
@@ -28,15 +28,15 @@ class csv_parser:
         return header_map
 
     def parse(self) -> List[Record]:
-        records = []
+        records: List[Record] = []
         with open(self.filepath, encoding='utf-8') as f:
-            lines = f.readlines()
+            lines: List[str] = f.readlines()
 
-        headers = [h.strip() for h in lines[0].split(",")]
-        header_map = self._resolve_headers(headers)
+        headers: List[str] = [h.strip() for h in lines[0].split(",")]
+        header_map: Dict[str, int] = self._resolve_headers(headers)
 
         for line in lines[1:]:
-            values = [v.strip() for v in line.strip().split(",")]
+            values: List[str] = [v.strip() for v in line.strip().split(",")]
             record = Record(
                 employee_id=values[header_map["employee_id"]],
                 name=values[header_map["name"]],

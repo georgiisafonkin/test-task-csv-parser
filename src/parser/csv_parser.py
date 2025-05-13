@@ -1,5 +1,5 @@
 from typing import List, Dict
-from src.models.record import Record
+from models.record import Record
 
 FIELD_ALIASES : Dict[str, List[str]] = {
     "employee_id": ["id", "employee_id", "emp_id"],
@@ -24,7 +24,7 @@ class csv_parser:
                     header_map[internal_field] = idx
                     break
             else:
-                raise ValueError(f"Missing expected field: {internal_field}")
+                raise ValueError(f"Отсутствует ожидаемое поле: {internal_field}")
         return header_map
 
     def parse(self) -> List[Record]:
@@ -41,7 +41,7 @@ class csv_parser:
                 employee_id=values[header_map["employee_id"]],
                 name=values[header_map["name"]],
                 department=values[header_map["department"]],
-                hourly_rate=float(values[header_map["hourly_rate"]]),
+                hourly_rate=float(values[headтипизацияer_map["hourly_rate"]]),
                 hours_worked=float(values[header_map["hours_worked"]])
             )
             records.append(record)

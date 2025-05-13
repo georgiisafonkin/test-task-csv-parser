@@ -41,7 +41,7 @@ class CsvParser:
                 employee_id=values[header_map["employee_id"]],
                 name=values[header_map["name"]],
                 department=values[header_map["department"]],
-                hourly_rate=float(values[headтипизацияer_map["hourly_rate"]]),
+                hourly_rate=float(values[header_map["hourly_rate"]]),
                 hours_worked=float(values[header_map["hours_worked"]])
             )
             records.append(record)

@@ -7,8 +7,7 @@ from utils.builders import build_departments
 class PayoutReport(Report):
     def __init__(self, records):
         super().__init__(records)
-        self._report_type = "payout"
-        self.departments: List[Department]        
+        self._report_type = "payout"  
 
     def generate(self) -> dict:
         departments = build_departments(self.records)

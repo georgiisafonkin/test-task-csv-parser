@@ -57,3 +57,102 @@ src
 
 - Логирование
 - Оформленный вывод отчётов в командную строку
+
+
+## Пример работы
+
+```bash
+python main.py ../data3.csv ../data2.csv ../data1.csv --report payout
+{
+    "report_type": "payout",
+    "departments": [
+        {
+            "department": "Sales",
+            "total_payout": 14170.0,
+            "employees": [
+                {
+                    "id": "201",
+                    "name": "Karen White",
+                    "email": "karen@example.com",
+                    "hours_worked": 165.0,
+                    "payout": 8250.0
+                },
+                {
+                    "id": "203",
+                    "name": "Mia Young",
+                    "email": "mia@example.com",
+                    "hours_worked": 160.0,
+                    "payout": 5920.0
+                }
+            ]
+        },
+        {
+            "department": "HR",
+            "total_payout": 19714.0,
+            "employees": [
+                {
+                    "id": "202",
+                    "name": "Liam Harris",
+                    "email": "liam@example.com",
+                    "hours_worked": 155.0,
+                    "payout": 6510.0
+                },
+                {
+                    "id": "101",
+                    "name": "Grace Lee",
+                    "email": "grace@example.com",
+                    "hours_worked": 160.0,
+                    "payout": 7200.0
+                },
+                {
+                    "id": "103",
+                    "name": "Ivy Clark",
+                    "email": "ivy@example.com",
+                    "hours_worked": 158.0,
+                    "payout": 6004.0
+                }
+            ]
+        },
+        {
+            "department": "Marketing",
+            "total_payout": 13250.0,
+            "employees": [
+                {
+                    "id": "102",
+                    "name": "Henry Martin",
+                    "email": "henry@example.com",
+                    "hours_worked": 150.0,
+                    "payout": 5250.0
+                },
+                {
+                    "id": "1",
+                    "name": "Alice Johnson",
+                    "email": "alice@example.com",
+                    "hours_worked": 160.0,
+                    "payout": 8000.0
+                }
+            ]
+        },
+        {
+            "department": "Design",
+            "total_payout": 16200.0,
+            "employees": [
+                {
+                    "id": "2",
+                    "name": "Bob Smith",
+                    "email": "bob@example.com",
+                    "hours_worked": 150.0,
+                    "payout": 6000.0
+                },
+                {
+                    "id": "3",
+                    "name": "Carol Williams",
+                    "email": "carol@example.com",
+                    "hours_worked": 170.0,
+                    "payout": 10200.0
+                }
+            ]
+        }
+    ]
+}
+```

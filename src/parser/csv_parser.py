@@ -9,7 +9,7 @@ FIELD_ALIASES : Dict[str, List[str]] = {
     "hours_worked": ["hours_worked", "worked_hours", "hours"]
 }
 
-class csv_parser:
+class CsvParser:
     def __init__(self, filepath: str) -> None:
         self.filepath = filepath
 
